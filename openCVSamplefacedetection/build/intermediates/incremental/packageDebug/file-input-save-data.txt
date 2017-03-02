@@ -1,27 +1,30 @@
 #Internal package file, do not edit.
-#Tue Feb 28 16:10:00 CET 2017
+#Thu Mar 02 10:36:49 CET 2017
 2.base=/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/res/resources-debug.ap_
 5.file=/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/res/resources-debug.ap_/res/raw/lbpcascade_frontalface.xml
 5.set=ANDROID_RESOURCE
 3.base=/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/res/resources-debug.ap_
-6.file=/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/res/resources-debug.ap_/AndroidManifest.xml
+6.file=/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/res/resources-debug.ap_/res/raw/cascade.xml
 2.set=ANDROID_RESOURCE
 4.base=/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/transforms/stripDebugSymbol/debug/folders/2000/1f/main
-7.file=/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/transforms/stripDebugSymbol/debug/folders/2000/1f/main/lib/x86/libdetection_based_tracker.so
-7.set=NATIVE_RESOURCE
-count=8
+7.file=/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/res/resources-debug.ap_/AndroidManifest.xml
+7.set=ANDROID_RESOURCE
+count=9
 0.file=/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/res/resources-debug.ap_/res/layout/face_detect_surface_view.xml
 5.base=/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/res/resources-debug.ap_
+8.file=/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/transforms/stripDebugSymbol/debug/folders/2000/1f/main/lib/x86/libdetection_based_tracker.so
 4.set=NATIVE_RESOURCE
 6.base=/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/res/resources-debug.ap_
 1.file=/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
 1.set=DEX
-7.base=/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/transforms/stripDebugSymbol/debug/folders/2000/1f/main
+7.base=/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/res/resources-debug.ap_
 2.file=/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/res/resources-debug.ap_/resources.arsc
 6.set=ANDROID_RESOURCE
 0.base=/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/res/resources-debug.ap_
+8.base=/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/transforms/stripDebugSymbol/debug/folders/2000/1f/main
 3.file=/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/res/resources-debug.ap_/res/drawable/icon.png
 3.set=ANDROID_RESOURCE
 1.base=/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/transforms/dex/debug/folders/1000/1f/main
 4.file=/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/transforms/stripDebugSymbol/debug/folders/2000/1f/main/lib/armeabi-v7a/libdetection_based_tracker.so
+8.set=NATIVE_RESOURCE
 0.set=ANDROID_RESOURCE
