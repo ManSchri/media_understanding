@@ -68,9 +68,9 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
 
                     try {
                         // load cascade file from application resources
-                        InputStream is = getResources().openRawResource(R.raw.cascade); // change this line +
+                        InputStream is = getResources().openRawResource(R.raw.scissorcascade_35); // change this line +
                         File cascadeDir = getDir("cascade", Context.MODE_PRIVATE);
-                        mCascadeFile = new File(cascadeDir, "cascade.xml"); // change this line for different cascade
+                        mCascadeFile = new File(cascadeDir, "scissorcascade_35.xml"); // change this line for different cascade
                         FileOutputStream os = new FileOutputStream(mCascadeFile);
 
                         byte[] buffer = new byte[4096];

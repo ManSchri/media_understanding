@@ -57,7 +57,7 @@ ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/o
 		ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/src/main/AndroidManifest.xml:27:23-48
 uses-sdk
 ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/src/main/AndroidManifest.xml:29:5-43
-MERGED from [face-detection:openCVLibrary320:unspecified] /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/exploded-aar/face-detection/openCVLibrary320/unspecified/AndroidManifest.xml:7:5-9:41
+MERGED from [face-detection:openCVLibrary320:unspecified] /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVLibrary320/build/intermediates/bundles/default/AndroidManifest.xml:7:5-9:41
 	android:targetSdkVersion
 		INJECTED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/src/main/AndroidManifest.xml
 		INJECTED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/src/main/AndroidManifest.xml

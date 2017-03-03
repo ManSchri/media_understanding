@@ -3,12 +3,12 @@
 
     <item
         is-multidex="false"
-        jar="/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/exploded-aar/face-detection/openCVLibrary320/unspecified/jars/classes.jar"
+        jar="/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVLibrary320/build/intermediates/bundles/default/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="3980f668b86e62efb1747fe23f82ad5cdde270c0">
-        <dex dex="/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/pre-dexed/debug/face-detection-openCVLibrary320-unspecified_93e1ab034e6bcf280066cc2260b4a64bac692f10.jar" />
+        <dex dex="/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/pre-dexed/debug/classes_4d655f6bd98ac630f1dcf7479c266143156701c8.jar" />
     </item>
 
 </items>
