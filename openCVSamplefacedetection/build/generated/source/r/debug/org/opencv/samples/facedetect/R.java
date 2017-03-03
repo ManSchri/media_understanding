@@ -49,12 +49,12 @@ containing a value of this type.
         public static final int face_detect_surface_view=0x7f030000;
     }
     public static final class raw {
-        public static final int lbpcascade_frontalface=0x7f040000;
-        public static final int scissorcascade_25=0x7f040001;
-        public static final int scissorcascade_30=0x7f040002;
-        public static final int scissorcascade_33=0x7f040003;
-        public static final int scissorcascade_34=0x7f040004;
-        public static final int scissorcascade_35=0x7f040005;
+        public static final int cascade=0x7f040000;
+        public static final int lbpcascade_frontalface=0x7f040001;
+        public static final int scissorcascade_25=0x7f040002;
+        public static final int scissorcascade_30=0x7f040003;
+        public static final int scissorcascade_33=0x7f040004;
+        public static final int scissorcascade_34=0x7f040005;
     }
     public static final class string {
         public static final int app_name=0x7f050000;

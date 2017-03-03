@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase.CvCameraViewFrame;
@@ -22,13 +24,21 @@ import org.opencv.imgproc.Imgproc;
 
 import android.app.Activity;
 import android.content.Context;
+import android.hardware.Camera;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
+import android.view.View.OnTouchListener;
 
-public class FdActivity extends Activity implements CvCameraViewListener2 {
+
+
+public class FdActivity extends Activity implements CvCameraViewListener2{//, OnTouchListener{
 
     private static final String    TAG                 = "OCVSample::Activity";
     private static final Scalar    FACE_RECT_COLOR     = new Scalar(0, 255, 0, 255);
@@ -54,8 +64,15 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
     private int                    mAbsoluteFaceSize   = 0;
 
     private CameraBridgeViewBase   mOpenCvCameraView;
+    private cameraview cameraview;
+
+
+    private String mPictureFileName;
+
 
     private BaseLoaderCallback  mLoaderCallback = new BaseLoaderCallback(this) {
+
+
         @Override
         public void onManagerConnected(int status) {
             switch (status) {
@@ -68,9 +85,9 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
 
                     try {
                         // load cascade file from application resources
-                        InputStream is = getResources().openRawResource(R.raw.scissorcascade_35); // change this line +
+                        InputStream is = getResources().openRawResource(R.raw.scissorcascade_33); // change this line +
                         File cascadeDir = getDir("cascade", Context.MODE_PRIVATE);
-                        mCascadeFile = new File(cascadeDir, "scissorcascade_35.xml"); // change this line for different cascade
+                        mCascadeFile = new File(cascadeDir, "scissorcascade_33.xml"); // change this line for different cascade
                         FileOutputStream os = new FileOutputStream(mCascadeFile);
 
                         byte[] buffer = new byte[4096];
@@ -80,6 +97,8 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
                         }
                         is.close();
                         os.close();
+
+                        //mOpenCvCameraView.setOnTouchListener(FdActivity.this);
 
                         mJavaDetector = new CascadeClassifier(mCascadeFile.getAbsolutePath());
                         mJavaDetector.load( mCascadeFile.getAbsolutePath() );
@@ -151,6 +170,23 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
         }
     }
 
+
+
+//    @Override
+//    public boolean onTouch(View v, MotionEvent event) {
+//        Log.i(TAG,"onTouch event");
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
+//        String currentDateandTime = sdf.format(new Date());
+//        String fileName = Environment.getExternalStorageDirectory().getPath() +
+//                "/sample_picture_" + currentDateandTime + ".jpg";
+//        cameraview.takePicture(fileName);
+//        Toast.makeText(this, fileName + " saved", Toast.LENGTH_SHORT).show();
+//        return false;
+//    }
+
+
+
+
     public void onDestroy() {
         super.onDestroy();
         mOpenCvCameraView.disableView();
@@ -165,6 +201,7 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
         mGray.release();
         mRgba.release();
     }
+
 
     public Mat onCameraFrame(CvCameraViewFrame inputFrame) {
 
