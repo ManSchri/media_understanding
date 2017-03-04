@@ -3,8 +3,9 @@ int attr show_fps 0x7f010000
 int drawable icon 0x7f020000
 int id any 0x7f060000
 int id back 0x7f060001
-int id fd_activity_surface_view 0x7f060003
+int id fd_activity_surface_view 0x7f060004
 int id front 0x7f060002
+int id textView 0x7f060003
 int layout face_detect_surface_view 0x7f030000
 int raw cascade 0x7f040000
 int raw lbpcascade_frontalface 0x7f040001

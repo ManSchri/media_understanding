@@ -14,11 +14,13 @@ import org.opencv.android.OpenCVLoader;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfRect;
+import org.opencv.core.Point;
 import org.opencv.core.Rect;
 import org.opencv.core.Scalar;
 import org.opencv.core.Size;
 import org.opencv.android.CameraBridgeViewBase;
 import org.opencv.android.CameraBridgeViewBase.CvCameraViewListener2;
+import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.objdetect.CascadeClassifier;
 import org.opencv.imgproc.Imgproc;
 
@@ -38,7 +40,7 @@ import android.view.View.OnTouchListener;
 
 
 
-public class FdActivity extends Activity implements CvCameraViewListener2{//, OnTouchListener{
+public class FdActivity extends Activity implements CvCameraViewListener2, OnTouchListener {
 
     private static final String    TAG                 = "OCVSample::Activity";
     private static final Scalar    FACE_RECT_COLOR     = new Scalar(0, 255, 0, 255);
@@ -64,10 +66,9 @@ public class FdActivity extends Activity implements CvCameraViewListener2{//, On
     private int                    mAbsoluteFaceSize   = 0;
 
     private CameraBridgeViewBase   mOpenCvCameraView;
-    private cameraview cameraview;
-
 
     private String mPictureFileName;
+    boolean touched;
 
 
     private BaseLoaderCallback  mLoaderCallback = new BaseLoaderCallback(this) {
@@ -79,6 +80,8 @@ public class FdActivity extends Activity implements CvCameraViewListener2{//, On
                 case LoaderCallbackInterface.SUCCESS:
                 {
                     Log.i(TAG, "OpenCV loaded successfully");
+                    mOpenCvCameraView.enableView();
+                    mOpenCvCameraView.setOnTouchListener(FdActivity.this);
 
                     // Load native library after(!) OpenCV initialization
                     System.loadLibrary("detection_based_tracker");
@@ -172,21 +175,6 @@ public class FdActivity extends Activity implements CvCameraViewListener2{//, On
 
 
 
-//    @Override
-//    public boolean onTouch(View v, MotionEvent event) {
-//        Log.i(TAG,"onTouch event");
-//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
-//        String currentDateandTime = sdf.format(new Date());
-//        String fileName = Environment.getExternalStorageDirectory().getPath() +
-//                "/sample_picture_" + currentDateandTime + ".jpg";
-//        cameraview.takePicture(fileName);
-//        Toast.makeText(this, fileName + " saved", Toast.LENGTH_SHORT).show();
-//        return false;
-//    }
-
-
-
-
     public void onDestroy() {
         super.onDestroy();
         mOpenCvCameraView.disableView();
@@ -203,7 +191,65 @@ public class FdActivity extends Activity implements CvCameraViewListener2{//, On
     }
 
 
+    @Override
     public Mat onCameraFrame(CvCameraViewFrame inputFrame) {
+
+
+        if(touched) {
+            Mat mRgba = inputFrame.rgba();
+            Mat mGray = inputFrame.gray();
+            //detectimage();
+            //return imgRgba;
+//
+//            Imgcodecs.imwrite("imcolor.bmp", imRgba);
+//            Imgcodecs.imwrite("imgray.bmp", imGray);
+//            mRgba = Imgcodecs.imread("imcolor.bmp");
+//            mGray = Imgcodecs.imread("imgray.bmp");
+
+            if (mAbsoluteFaceSize == 0) {
+                int height = mGray.rows();
+                if (Math.round(height * mRelativeFaceSize) > 0) {
+                    mAbsoluteFaceSize = Math.round(height * mRelativeFaceSize);
+                }
+                mNativeDetector.setMinFaceSize(mAbsoluteFaceSize);
+            }
+
+            MatOfRect faces = new MatOfRect();
+
+            if (mDetectorType == JAVA_DETECTOR) {
+                if (mJavaDetector != null)
+                    mJavaDetector.detectMultiScale(mGray, faces, 1.1, 2, 2, // TODO: objdetect.CV_HAAR_SCALE_IMAGE
+                            new Size(mAbsoluteFaceSize, mAbsoluteFaceSize), new Size());
+            }
+            else if (mDetectorType == NATIVE_DETECTOR) {
+                if (mNativeDetector != null)
+                    mNativeDetector.detect(mGray, faces);
+            }
+            else {
+                Log.e(TAG, "Detection method is not selected!");
+            }
+
+            Rect[] facesArray = faces.toArray();
+
+
+            if(facesArray.length==0){
+                Imgproc.putText(mRgba,"object not found, try again", new Point(mRgba.rows()/2,mRgba.cols()/2),
+                        Core.FONT_ITALIC, 1.0 ,new  Scalar(255));
+                touched = false;
+            }
+            else {
+                for (int i = 0; i < facesArray.length; i++) {
+
+                    //Imgproc.rectangle(mRgba, facesArray[i].tl(), facesArray[i].br(), FACE_RECT_COLOR, 3);
+                    Imgproc.putText(mRgba, "object found", new Point(mRgba.rows() / 2, mRgba.cols() / 2),
+                            Core.FONT_ITALIC, 1.0, new Scalar(255));
+                    Imgcodecs.imwrite("imcolor.bmp", mRgba);
+                }
+
+                return Imgcodecs.imread("imcolor.bmp");
+            }
+            return mRgba;
+        }
 
         mRgba = inputFrame.rgba();
         mGray = inputFrame.gray();
@@ -222,21 +268,30 @@ public class FdActivity extends Activity implements CvCameraViewListener2{//, On
             if (mJavaDetector != null)
                 mJavaDetector.detectMultiScale(mGray, faces, 1.1, 2, 2, // TODO: objdetect.CV_HAAR_SCALE_IMAGE
                         new Size(mAbsoluteFaceSize, mAbsoluteFaceSize), new Size());
-        }
-        else if (mDetectorType == NATIVE_DETECTOR) {
+        } else if (mDetectorType == NATIVE_DETECTOR) {
             if (mNativeDetector != null)
                 mNativeDetector.detect(mGray, faces);
-        }
-        else {
+        } else {
             Log.e(TAG, "Detection method is not selected!");
         }
 
-        Rect[] facesArray = faces.toArray();
-        for (int i = 0; i < facesArray.length; i++)
-            Imgproc.rectangle(mRgba, facesArray[i].tl(), facesArray[i].br(), FACE_RECT_COLOR, 3);
 
+        Rect[] facesArray = faces.toArray();
+        //for (int i = 0; i < facesArray.length; i++)
+            //Imgproc.rectangle(mRgba, facesArray[i].tl(), facesArray[i].br(), FACE_RECT_COLOR, 3);
         return mRgba;
+
     }
+
+
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        Log.i(TAG,"onTouch event");
+        touched = true;
+        return true;
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -267,6 +322,50 @@ public class FdActivity extends Activity implements CvCameraViewListener2{//, On
         }
         return true;
     }
+
+//   public Mat detectimage(){
+//        mRgba = Imgcodecs.imread("imcolor.bmp");
+//        mGray = Imgcodecs.imread("imgray.bmp");
+//
+//        if (mAbsoluteFaceSize == 0) {
+//            int height = mGray.rows();
+//            if (Math.round(height * mRelativeFaceSize) > 0) {
+//                mAbsoluteFaceSize = Math.round(height * mRelativeFaceSize);
+//            }
+//            mNativeDetector.setMinFaceSize(mAbsoluteFaceSize);
+//        }
+//
+//        MatOfRect faces = new MatOfRect();
+//
+//        if (mDetectorType == JAVA_DETECTOR) {
+//            if (mJavaDetector != null)
+//                mJavaDetector.detectMultiScale(mGray, faces, 1.1, 2, 2, // TODO: objdetect.CV_HAAR_SCALE_IMAGE
+//                        new Size(mAbsoluteFaceSize, mAbsoluteFaceSize), new Size());
+//        }
+//        else if (mDetectorType == NATIVE_DETECTOR) {
+//            if (mNativeDetector != null)
+//                mNativeDetector.detect(mGray, faces);
+//        }
+//        else {
+//            Log.e(TAG, "Detection method is not selected!");
+//        }
+//
+//        Rect[] facesArray = faces.toArray();
+//        if(facesArray.length==0){
+//            System.out.print("nothing detected");
+//            Imgproc.putText(mRgba,"object not found, try again", new Point(mRgba.rows()/2,mRgba.cols()/2),
+//                    Core.FONT_ITALIC, 1.0 ,new  Scalar(255));
+//            touched = false;
+//        }
+//        else {
+//            for (int i = 0; i < facesArray.length; i++)
+//                Imgproc.rectangle(mRgba, facesArray[i].tl(), facesArray[i].br(), FACE_RECT_COLOR, 3);
+//            Imgproc.putText(mRgba, "object found", new Point(mRgba.rows() / 2, mRgba.cols() / 2),
+//                    Core.FONT_ITALIC, 1.0, new Scalar(255));
+//        }
+//
+//        return mRgba;
+//    }
 
     private void setMinFaceSize(float faceSize) {
         mRelativeFaceSize = faceSize;
