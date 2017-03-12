@@ -1,0 +1,4 @@
+#Sun Mar 12 17:09:51 CET 2017
+base.0=/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+renamed.0=classes.dex
+file.0=/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
