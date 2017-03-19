@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
-        "source": "/Users/manonmac/.android/build-cache/2fa96db72d29e02882c40579c8df9107b4a28610/output/res/layout/support_simple_spinner_dropdown_item.xml"
-    },
-    {
         "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/layout/face_detect_surface_view.xml",
         "source": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/res/layout/face_detect_surface_view.xml"
+    },
+    {
+        "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
+        "source": "/Users/manonmac/.android/build-cache/2fa96db72d29e02882c40579c8df9107b4a28610/output/res/layout/support_simple_spinner_dropdown_item.xml"
     },
     {
         "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
@@ -26,6 +26,10 @@
     {
         "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
         "source": "/Users/manonmac/.android/build-cache/2fa96db72d29e02882c40579c8df9107b4a28610/output/res/layout/abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/layout/activity_photo_instruction.xml",
+        "source": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/res/layout/activity_photo_instruction.xml"
     },
     {
         "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",

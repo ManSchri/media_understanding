@@ -28,6 +28,10 @@
         "source": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/src/main/res/raw/scissorcascade_33.xml"
     },
     {
+        "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/raw/doorcascade_33.xml",
+        "source": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/res/raw/doorcascade_33.xml"
+    },
+    {
         "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/res/merged/debug/raw/scissorcascade_34.xml",
         "source": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/src/main/res/raw/scissorcascade_34.xml"
     },

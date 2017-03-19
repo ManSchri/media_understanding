@@ -40,17 +40,19 @@
             android:name=".FdActivity"
             android:configChanges="keyboardHidden|orientation"
             android:label="@string/app_name"
-            android:screenOrientation="landscape">
-        </activity>
-        <activity android:name=".AppStartup"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".AppStartup"
             android:configChanges="keyboardHidden|orientation"
             android:label="@string/app_name"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".PhotoInstruction"></activity>
     </application>
 
 </manifest>

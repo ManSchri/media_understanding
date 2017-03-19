@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase.CvCameraViewFrame;
@@ -26,6 +27,7 @@ import org.opencv.imgproc.Imgproc;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.os.Environment;
@@ -35,6 +37,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View.OnTouchListener;
 
@@ -74,6 +77,19 @@ public class FdActivity extends Activity implements CvCameraViewListener2, OnTou
     private BaseLoaderCallback  mLoaderCallback = new BaseLoaderCallback(this) {
 
 
+        public void nextChallenge(View view){
+            Intent intent;
+            int game = new Random().nextInt(2);
+            switch (game){
+                case 0: intent = new Intent(FdActivity.this, PhotoInstruction.class);
+                    break;
+                case 1: intent = new Intent(FdActivity.this, PhotoInstruction.class); // change to speechInstruction
+                    break;
+                default: intent = new Intent(FdActivity.this, PhotoInstruction.class);
+            }
+            startActivity(intent);
+        }
+
         @Override
         public void onManagerConnected(int status) {
             switch (status) {
@@ -86,12 +102,34 @@ public class FdActivity extends Activity implements CvCameraViewListener2, OnTou
                     // Load native library after(!) OpenCV initialization
                     System.loadLibrary("detection_based_tracker");
 
+                    Bundle b = getIntent().getExtras();
+                    int casc = b.getInt("casc");
+
+                    InputStream is;
+                    File cascadeDir;
+                    FileOutputStream os ;
+                    final TextView textView = (TextView) findViewById(R.id.textView);
+
                     try {
                         // load cascade file from application resources
-                        InputStream is = getResources().openRawResource(R.raw.scissorcascade_33); // change this line +
-                        File cascadeDir = getDir("cascade", Context.MODE_PRIVATE);
-                        mCascadeFile = new File(cascadeDir, "scissorcascade_33.xml"); // change this line for different cascade
-                        FileOutputStream os = new FileOutputStream(mCascadeFile);
+                        if(casc==0) {
+                            is = getResources().openRawResource(R.raw.scissorcascade_33); // change this line +
+                            cascadeDir = getDir("cascade", Context.MODE_PRIVATE);
+                            mCascadeFile = new File(cascadeDir, "scissorcascade_33.xml"); // change this line for different cascade
+                            os = new FileOutputStream(mCascadeFile);
+                            textView.setText("Scissors");
+                        }
+                        else{
+                            is = getResources().openRawResource(R.raw.doorcascade_33); // change this line +
+                            cascadeDir = getDir("cascade", Context.MODE_PRIVATE);
+                            mCascadeFile = new File(cascadeDir, "doorcascade_33.xml"); // change this line for different cascade
+                            os = new FileOutputStream(mCascadeFile);
+                            textView.setText("Door");
+                        }
+
+
+
+
 
                         byte[] buffer = new byte[4096];
                         int bytesRead;
@@ -236,7 +274,7 @@ public class FdActivity extends Activity implements CvCameraViewListener2, OnTou
 
             if(facesArray.length==0){
                 Imgproc.putText(mRgba,"object not found, try again", new Point(mRgba.rows()/2,mRgba.cols()/3),
-                        Core.FONT_ITALIC, 1.0 ,new  Scalar(255));
+                        Core.FONT_HERSHEY_PLAIN, 1.0 ,new  Scalar(255,255,255));
 
 
                 touched = false;
@@ -245,9 +283,19 @@ public class FdActivity extends Activity implements CvCameraViewListener2, OnTou
                 for (int i = 0; i < facesArray.length; i++) {
 
                     //Imgproc.rectangle(mRgba, facesArray[i].tl(), facesArray[i].br(), FACE_RECT_COLOR, 3);
-                    Imgproc.putText(mRgba, "object found", new Point(mRgba.rows() / 2, mRgba.cols() / 2),
-                            Core.FONT_ITALIC, 1.0, new Scalar(255));
                     Imgcodecs.imwrite("imcolor.bmp", mRgba);
+                    Intent intent;
+                    int game = new Random().nextInt(2);
+                    switch (game){
+                        case 0: intent = new Intent(FdActivity.this, PhotoInstruction.class);
+                            break;
+                        case 1: intent = new Intent(FdActivity.this, PhotoInstruction.class); // change to speechInstruction
+                            break;
+                        default: intent = new Intent(FdActivity.this, PhotoInstruction.class);
+                    }
+                    startActivity(intent);
+
+
                 }
                 found = true;
 
