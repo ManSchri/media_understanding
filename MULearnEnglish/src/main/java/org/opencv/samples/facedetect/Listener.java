@@ -1,6 +1,7 @@
 package org.opencv.samples.facedetect;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import android.app.Activity;
@@ -11,6 +12,7 @@ import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.ImageView;
@@ -35,7 +37,8 @@ public class Listener extends Activity {
 
         final ImageView image = (ImageView) findViewById(R.id.objectImage);
 
-        int word = new Random().nextInt(3);
+        //int word = new Random().nextInt(3);
+        int word = 1;
         switch (word){
             case 0: ObjectWord = "scissors";
                 image.setImageResource(R.drawable.scissors);
@@ -57,6 +60,25 @@ public class Listener extends Activity {
             @Override
             public void onClick(View v) {
                 promptSpeechInput();
+            }
+        });
+
+        Button skip = (Button) findViewById(R.id.skip);
+        skip.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent;
+                int game = new Random().nextInt(2);
+                switch (game){
+                    case 0: intent = new Intent(Listener.this, PhotoInstruction.class);
+                        break;
+                    case 1: intent = new Intent(Listener.this, Listener.class);
+                        break;
+                    default: throw new RuntimeException("Error");
+                }
+                startActivity(intent);
             }
         });
 
@@ -84,6 +106,8 @@ public class Listener extends Activity {
     /**
      * Receiving speech input
      * */
+
+    int wrongcounter = 3;
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -96,10 +120,17 @@ public class Listener extends Activity {
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
 
                     if(result.get(0).equals(ObjectWord)){
-                        txtSpeechInput.setText("Correct!");
+                       Intent intent = new Intent(this, RightImage.class);
+                        startActivity(intent);
                     }
                     else{
                         txtSpeechInput.setText(result.get(0));
+                        wrongcounter = wrongcounter - 1;
+                        if(wrongcounter==0){
+                            Intent intent = new Intent(this, Wrong.class);
+                            startActivity(intent);
+                        }
+
                     }
                 }
                 break;

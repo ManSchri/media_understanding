@@ -3,6 +3,24 @@
 
     <item
         is-multidex="false"
+        jar="/Users/manonmac/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.2.0/support-annotations-25.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
+        <dex dex="/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/pre-dexed/debug/support-annotations-25.2.0_84b095aece9345c3ac0db87efc2bbfde43254a54.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/manonmac/.android/build-cache/3f3955dd39f84abd034fe2d26382a6e758107813/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
+        <dex dex="/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/pre-dexed/debug/classes_dc45fc5a92b5a08504cbcc3d7daab05fcf3dc8a1.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/manonmac/.android/build-cache/e40a56325d86e20a6aae9f714d7243d021380c01/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -27,15 +45,6 @@
         revision="25.0.2"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
         <dex dex="/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/pre-dexed/debug/classes_b42d233ed1407d343582d090b60ce59dfe02ad5d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/manonmac/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.2.0/support-annotations-25.2.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
-        <dex dex="/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/pre-dexed/debug/support-annotations-25.2.0_84b095aece9345c3ac0db87efc2bbfde43254a54.jar" />
     </item>
     <item
         is-multidex="false"
@@ -99,15 +108,6 @@
         revision="25.0.2"
         sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
         <dex dex="/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/pre-dexed/debug/constraint-layout-solver-1.0.2_e84981301ab78d004a34fa3472d920df2d43ccbd.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/manonmac/.android/build-cache/3f3955dd39f84abd034fe2d26382a6e758107813/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
-        <dex dex="/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/pre-dexed/debug/classes_dc45fc5a92b5a08504cbcc3d7daab05fcf3dc8a1.jar" />
     </item>
     <item
         is-multidex="false"

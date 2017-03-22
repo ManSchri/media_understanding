@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
-        "source": "/Users/manonmac/.android/build-cache/2fa96db72d29e02882c40579c8df9107b4a28610/output/res/layout/support_simple_spinner_dropdown_item.xml"
-    },
-    {
         "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/layout/face_detect_surface_view.xml",
         "source": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/res/layout/face_detect_surface_view.xml"
+    },
+    {
+        "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
+        "source": "/Users/manonmac/.android/build-cache/2fa96db72d29e02882c40579c8df9107b4a28610/output/res/layout/support_simple_spinner_dropdown_item.xml"
     },
     {
         "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
@@ -60,6 +60,10 @@
         "source": "/Users/manonmac/.android/build-cache/2fa96db72d29e02882c40579c8df9107b4a28610/output/res/layout/notification_action_tombstone.xml"
     },
     {
+        "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/layout/activity_wrong.xml",
+        "source": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/res/layout/activity_wrong.xml"
+    },
+    {
         "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
         "source": "/Users/manonmac/.android/build-cache/2fa96db72d29e02882c40579c8df9107b4a28610/output/res/layout/select_dialog_item_material.xml"
     },
@@ -110,6 +114,10 @@
     {
         "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
         "source": "/Users/manonmac/.android/build-cache/2fa96db72d29e02882c40579c8df9107b4a28610/output/res/layout/abc_screen_content_include.xml"
+    },
+    {
+        "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/layout/activity_right_image.xml",
+        "source": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/res/layout/activity_right_image.xml"
     },
     {
         "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/openCVSamplefacedetection/build/intermediates/res/merged/debug/layout/face_detect_surface_view.xml",

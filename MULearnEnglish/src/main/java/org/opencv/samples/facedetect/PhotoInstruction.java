@@ -21,16 +21,19 @@ public class PhotoInstruction extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo_instruction);
         final TextView ObjectName = (TextView) findViewById(R.id.ObjectName);
-        int ObjectInt = new Random().nextInt(2);
+        int ObjectInt = new Random().nextInt(3);
 
         switch (ObjectInt){
             case 0: ObjectName.setText("Scissors");
                 intent.putExtra("casc", 0);
                 break;
-            case 1: ObjectName.setText("Door");
+            case 1: ObjectName.setText("Pen");
                 intent.putExtra("casc", 1);
                 break;
+            case 2: ObjectName.setText("Door");
+                intent.putExtra("casc", 2);
         }
+       
     }
 
     public void takePicture (View view){

@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:2:1-73:12
+ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:2:1-79:12
 	package
 		ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:3:5-44
 		INJECTED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml
@@ -100,7 +100,7 @@ ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/M
 	android:name
 		ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:37:22-77
 application
-ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:39:5-71:19
+ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:39:5-77:19
 MERGED from [com.android.support:appcompat-v7:25.2.0] /Users/manonmac/.android/build-cache/2fa96db72d29e02882c40579c8df9107b4a28610/output/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-v4:25.2.0] /Users/manonmac/.android/build-cache/242b9ad1b63d1546b0e16afb3e1e718e180a4461/output/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-fragment:25.2.0] /Users/manonmac/.android/build-cache/752e0e3043af57142fa6851a8cacf47c26066eb7/output/AndroidManifest.xml:25:5-20
@@ -148,7 +148,7 @@ ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/M
 	android:name
 		ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:56:27-74
 activity#org.opencv.samples.facedetect.PhotoInstruction
-ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:59:9-63:62
+ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:59:9-63:53
 	android:screenOrientation
 		ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:63:13-50
 	android:label
@@ -158,7 +158,7 @@ ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/M
 	android:name
 		ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:60:13-45
 activity#org.opencv.samples.facedetect.Listener
-ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:64:9-70:20
+ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:64:9-68:53
 	android:screenOrientation
 		ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:68:13-50
 	android:label
@@ -167,3 +167,23 @@ ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/M
 		ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:66:13-63
 	android:name
 		ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:65:13-37
+activity#org.opencv.samples.facedetect.Wrong
+ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:69:9-72:52
+	android:screenOrientation
+		ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:72:13-50
+	android:label
+		ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:71:13-45
+	android:configChanges
+		ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:70:13-63
+	android:name
+		ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:69:19-40
+activity#org.opencv.samples.facedetect.RightImage
+ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:73:9-76:62
+	android:screenOrientation
+		ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:76:13-50
+	android:label
+		ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:75:13-45
+	android:configChanges
+		ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:74:13-63
+	android:name
+		ADDED from /Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/AndroidManifest.xml:73:19-45

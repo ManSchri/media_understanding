@@ -19,7 +19,7 @@
         android:layout_height="53dp"
         android:clickable="true"
         android:onClick="startLearning"
-        android:text="Start Learning!"
+        android:text="Begin met leren!"
         android:visibility="visible"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"

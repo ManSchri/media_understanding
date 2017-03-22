@@ -50,5 +50,9 @@
     {
         "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/raw/cascade.xml",
         "source": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/res/raw/cascade.xml"
+    },
+    {
+        "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/raw/pencascade.xml",
+        "source": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/res/raw/pencascade.xml"
     }
 ]

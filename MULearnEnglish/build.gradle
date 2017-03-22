@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "org.opencv.samples.facedetect"
         minSdkVersion 11
-        targetSdkVersion 21
+        targetSdkVersion 25
 
         ndk {
             moduleName "detection_based_tracker"

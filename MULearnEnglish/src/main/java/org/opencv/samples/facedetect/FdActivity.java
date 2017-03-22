@@ -123,6 +123,13 @@ public class FdActivity extends Activity implements CvCameraViewListener2, OnTou
                             os = new FileOutputStream(mCascadeFile);
                             textView.setText("Scissors");
                         }
+                        if(casc==1){
+                            is = getResources().openRawResource(R.raw.pencascade); // change this line +
+                            cascadeDir = getDir("cascade", Context.MODE_PRIVATE);
+                            mCascadeFile = new File(cascadeDir, "pencascade.xml"); // change this line for different cascade
+                            os = new FileOutputStream(mCascadeFile);
+                            textView.setText("Pen");
+                        }
                         else{
                             is = getResources().openRawResource(R.raw.doorcascade_33); // change this line +
                             cascadeDir = getDir("cascade", Context.MODE_PRIVATE);
@@ -206,7 +213,7 @@ public class FdActivity extends Activity implements CvCameraViewListener2, OnTou
                         break;
                     case 1: intent = new Intent(FdActivity.this, Listener.class);
                         break;
-                    default: intent = new Intent(FdActivity.this, PhotoInstruction.class);
+                    default: throw new RuntimeException("Error");
                 }
                 startActivity(intent);
             }
@@ -253,6 +260,8 @@ public class FdActivity extends Activity implements CvCameraViewListener2, OnTou
     }
 
     public boolean found = false;
+    int wrongcounter = 3;
+
     @Override
     public Mat onCameraFrame(CvCameraViewFrame inputFrame) {
         if(found){
@@ -297,29 +306,33 @@ public class FdActivity extends Activity implements CvCameraViewListener2, OnTou
 
 
             if(facesArray.length==0){
-                Imgproc.putText(mRgba,"object not found, try again", new Point(mRgba.rows()/2,mRgba.cols()/3),
+                Imgproc.putText(mRgba,"object  niet gevonden, probeer opnieuw", new Point(mRgba.rows()/2,mRgba.cols()/3),
                         Core.FONT_HERSHEY_PLAIN, 1.0 ,new  Scalar(255,255,255));
-
-
+                wrongcounter = wrongcounter -1;
+                if(wrongcounter==0){
+                    Intent intent = new Intent(FdActivity.this, Wrong.class);
+                    startActivity(intent);
+                }
                 touched = false;
+
             }
             else {
                 for (int i = 0; i < facesArray.length; i++) {
 
                     //Imgproc.rectangle(mRgba, facesArray[i].tl(), facesArray[i].br(), FACE_RECT_COLOR, 3);
                     Imgcodecs.imwrite("imcolor.bmp", mRgba);
-                    Intent intent;
-                    int game = new Random().nextInt(2);
-                    switch (game){
-                        case 0: intent = new Intent(FdActivity.this, PhotoInstruction.class);
-                            break;
-                        case 1: intent = new Intent(FdActivity.this, PhotoInstruction.class); // change to speechInstruction
-                            break;
-                        default: intent = new Intent(FdActivity.this, PhotoInstruction.class);
-                    }
-                    startActivity(intent);
-
-
+                    Intent RightIntent = new Intent(FdActivity.this, RightImage.class);
+                    startActivity(RightIntent);
+//                    Intent intent;
+//                    int game = new Random().nextInt(2);
+//                    switch (game){
+//                        case 0: intent = new Intent(FdActivity.this, PhotoInstruction.class);
+//                            break;
+//                        case 1: intent = new Intent(FdActivity.this, Listener.class);
+//                            break;
+//                        default: throw new RuntimeException("Error");
+//                    }
+//                    startActivity(intent);
                 }
                 found = true;
 

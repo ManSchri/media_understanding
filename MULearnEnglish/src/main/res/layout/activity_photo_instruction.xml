@@ -22,7 +22,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:text='Press "GO" and take a picture of:'
+        android:text='Druk op "GO" en neem een foto van:'
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/ObjectName"
         app:layout_constraintHorizontal_bias="0.501"
