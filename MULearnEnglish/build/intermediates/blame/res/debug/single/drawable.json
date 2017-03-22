@@ -4,6 +4,10 @@
         "source": "/Users/manonmac/.android/build-cache/2fa96db72d29e02882c40579c8df9107b4a28610/output/res/drawable/abc_btn_colored_material.xml"
     },
     {
+        "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/drawable/scissors.png",
+        "source": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/res/drawable/scissors.png"
+    },
+    {
         "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
         "source": "/Users/manonmac/.android/build-cache/2fa96db72d29e02882c40579c8df9107b4a28610/output/res/drawable/abc_spinner_textfield_background_material.xml"
     },
@@ -30,6 +34,14 @@
     {
         "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
         "source": "/Users/manonmac/.android/build-cache/2fa96db72d29e02882c40579c8df9107b4a28610/output/res/drawable/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/drawable/pen.png",
+        "source": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/res/drawable/pen.png"
+    },
+    {
+        "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/drawable/door.png",
+        "source": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/res/drawable/door.png"
     },
     {
         "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
@@ -98,6 +110,10 @@
     {
         "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
         "source": "/Users/manonmac/.android/build-cache/2fa96db72d29e02882c40579c8df9107b4a28610/output/res/drawable/abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/drawable/unionjack.png",
+        "source": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/src/main/res/drawable/unionjack.png"
     },
     {
         "merged": "/Users/manonmac/Downloads/OpenCV-android-sdk/samples/face-detection/MULearnEnglish/build/intermediates/res/merged/debug/drawable/abc_ic_menu_overflow_material.xml",

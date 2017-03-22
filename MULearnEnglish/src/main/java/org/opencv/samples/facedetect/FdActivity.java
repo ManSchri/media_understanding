@@ -40,6 +40,8 @@ import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View.OnTouchListener;
+import android.widget.Button;
+
 
 
 
@@ -74,21 +76,23 @@ public class FdActivity extends Activity implements CvCameraViewListener2, OnTou
     boolean touched;
 
 
+
+
     private BaseLoaderCallback  mLoaderCallback = new BaseLoaderCallback(this) {
 
 
-        public void nextChallenge(View view){
-            Intent intent;
-            int game = new Random().nextInt(2);
-            switch (game){
-                case 0: intent = new Intent(FdActivity.this, PhotoInstruction.class);
-                    break;
-                case 1: intent = new Intent(FdActivity.this, PhotoInstruction.class); // change to speechInstruction
-                    break;
-                default: intent = new Intent(FdActivity.this, PhotoInstruction.class);
-            }
-            startActivity(intent);
-        }
+//        public void nextChallenge(View view){
+//            Intent intent;
+//            int game = new Random().nextInt(2);
+//            switch (game){
+//                case 0: intent = new Intent(FdActivity.this, PhotoInstruction.class);
+//                    break;
+//                case 1: intent = new Intent(FdActivity.this, PhotoInstruction.class); // change to speechInstruction
+//                    break;
+//                default: intent = new Intent(FdActivity.this, PhotoInstruction.class);
+//            }
+//            startActivity(intent);
+//        }
 
         @Override
         public void onManagerConnected(int status) {
@@ -188,6 +192,26 @@ public class FdActivity extends Activity implements CvCameraViewListener2, OnTou
         mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.fd_activity_surface_view);
         mOpenCvCameraView.setVisibility(CameraBridgeViewBase.VISIBLE);
         mOpenCvCameraView.setCvCameraViewListener(this);
+
+        Button skip = (Button) findViewById(R.id.skip);
+        skip.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent;
+                int game = new Random().nextInt(2);
+                switch (game){
+                    case 0: intent = new Intent(FdActivity.this, PhotoInstruction.class);
+                        break;
+                    case 1: intent = new Intent(FdActivity.this, Listener.class);
+                        break;
+                    default: intent = new Intent(FdActivity.this, PhotoInstruction.class);
+                }
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override

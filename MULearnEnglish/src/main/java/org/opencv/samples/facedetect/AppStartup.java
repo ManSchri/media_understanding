@@ -21,7 +21,7 @@ public class AppStartup extends Activity {
         switch (game){
             case 0: intent = new Intent(this, PhotoInstruction.class);
                 break;
-            case 1: intent = new Intent(this, PhotoInstruction.class); // change to speechInstruction
+            case 1: intent = new Intent(this, Listener.class); // change to speechInstruction
                 break;
             default: intent = new Intent(this, PhotoInstruction.class);
         }
